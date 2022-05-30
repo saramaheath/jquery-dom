@@ -21,7 +21,7 @@
 
 <body>
 <div class="container">
-  <h1 id="title" class="text-center">Welcome to my website.</h1>
+  <h1 id="title" class="text-center">Welcome to my website!!!</h1>
   <div class="row">
     <article class="col-sm-8">
       <p>My website is very important because I have many important things
@@ -74,7 +74,26 @@
 </div>
 <script src="https://unpkg.com/jquery"></script>
 <script>
-  // Add your code here!
+  "use strict";
+  //1. Give images inside of article tag the class of image-center
+  $("article img").addClass("image-center");
+
+  //2. Remove last paragraph in article
+  $("article p").last().remove();
+
+  //3. Set font size of title to be a random pixel size between 0 and 100
+  $("#title").css("font-size", Math.floor(Math.random()*100) + 'px');
+
+  //4. Add item to the list
+  let $newLi = $("<li>");
+  $newLi.text("What are we even doing?");
+  $newLi.insertAfter($("ol li").last());
+  //$("ol").append($newLi);
+  //$("ol").append($("<li>Fifth item</li>"));
+
+  
+
+
 </script>
 </body>
 
