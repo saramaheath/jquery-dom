@@ -106,6 +106,8 @@
     <script src="https://unpkg.com/jquery"></script>
     <script>
       "use strict";
+      //Use "const" when appropriate instead of "let"
+
       //1. Give images inside of article tag the class of image-center
       $("article img").addClass("image-center");
 
@@ -113,6 +115,7 @@
       $("article p").last().remove();
 
       //3. Set font size of title to be a random pixel size between 0 and 100
+      //Could make a function to do all the math for readability
       $("#title").css("font-size", Math.floor(Math.random() * 100) + "px");
 
       //4. Add item to the list
@@ -137,6 +140,14 @@
       }
 
       $(".form-control").on("change", changeBackgroundColor);
+
+      //7. Add event listener so when click on image, remove from DOM
+      //Remove "evt" parameter OR use "evt.target" instead of "this" -- better to use evt.target
+      $("img").on("click", function(evt){
+        $(this).remove();
+      });
+
+
     </script>
   </body>
 </html>
